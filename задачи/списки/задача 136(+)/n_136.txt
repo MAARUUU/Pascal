@@ -1,0 +1,30 @@
+при n=3:
+3 2 1 
+rezult=6
+Sum=6
+
+при n=5:
+1 4 3 1 5 
+rezult=60
+Sum=14
+
+при n=2:
+1 6 
+rezult=6
+Sum=7
+
+при n=3:
+4 3 2 
+rezult=24
+Sum=9
+
+при n=5:
+3 6 8 9 7 
+rezult=9072
+Sum=33
+
+при n=2:
+34 1 
+rezult=34
+Sum=35
+

@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<conio.h>  //библиотека с функцией GETCH
+ 
+struct Titem{      //Создаём структуру "Titem"
+  int n;
+  Titem *next,*prev;
+} *first,*s,*p;
+ 
+int n,m;
+ 
+void add_item(int v){     //Описываем функцию "add_item" добавляющую в список порядковые номера участников
+  Titem *p;
+ 
+  if (s==NULL && first==NULL){
+    s=new Titem;
+    s->n = v;
+    s->next = NULL;
+    s->prev = NULL;
+    first=s;
+  }
+ 
+  else{
+ 
+    p = new Titem;
+    p->n = v;
+    p->next=NULL;
+    p->prev=s;
+    s->next=p;
+    s=p;
+ 
+  }
+return;
+}
+ 
+int main (){
+ 
+  int i;
+ 
+  printf("\nвведите число n ");
+  scanf("%d", &n);
+ 
+  printf("\nвведите число m ");
+  scanf("%d", &m);
+ 
+  for (i=0; i<n; i++)    //Запускаем функцию "add_item"
+    add_item(i+1);
+  s->next=first;         //Замыкаем список
+  first->prev=s;
+ 
+  p=first;
+  for(i=0; i<n; i++){
+    printf("%d ",p->n);  //Выводим на экран исходный список
+    p=p->next;
+  }
+  printf("\n");
+ 
+ 
+  s=first;
+  while(n>1){               //Из списка с порядковыми номерами участников удаляем m-ый
+                            //по счёту столько   раз, пока не останется один участник
+                            //(после удаления    участника считать начинаем со следующего после удалённого)
+    p=s;
+    for(i=1; i<m; i++)
+      p=p->next;
+    p->next->prev=p->prev;   //Перед удалением m-ого элемента списка выстраивается свзь между предыдущим 
+    p->prev->next=p->next;   //и следующим элементами списка
+    s=p->next;
+    delete p;
+    n--;
+  }
+ 
+ 
+  printf("%d ",s->n);         //Выводим на экран номер оставшегося участника
+ 
+  getch();
+  return 0;
+}

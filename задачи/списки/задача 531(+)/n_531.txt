@@ -1,0 +1,23 @@
+при n=5:
+1 2 3 4 5 
+rezult=-4
+rezult=-3
+rezult=-2
+rezult=-1
+
+при n=3:
+1 2 3 
+rezult=-2
+rezult=-1
+
+при n=5:
+3 2 5 4 1 
+rezult=2
+rezult=1
+rezult=4
+rezult=3
+
+при n=2:
+3 2 
+rezult=1
+

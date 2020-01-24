@@ -1,0 +1,6 @@
+При n=4
+result= 0.5
+При n=2
+result= 0.8
+При n=6
+result= 0.4

@@ -1,0 +1,46 @@
+﻿program m2;
+var
+a,b,c,Ha,Hb,Hc,Ma,Mb,Mc,La,Lb,Lc,r1,R,p:real;
+t:text;
+begin
+assign (t, 'm2.txt');
+Append(t);
+writeln('a,b,c');
+readln(a,b,c);
+writeln(t,'При а=',a, ' '  'При b=',b, ' ' 'При c=',c);
+p:=(a+b+c)/2;
+Ha:=((2*(sqrt(p*(p-a)*(p-b)*(p-c))))/a);
+Hb:=((2*(sqrt(p*(p-a)*(p-b)*(p-c))))/b);
+Hc:=((2*(sqrt(p*(p-a)*(p-b)*(p-c))))/c);
+Ma:=(1/2*(sqrt((2*(b*b))+(2*(c*c))-(a*a))));
+Mb:=(1/2*(sqrt((2*(b*b))+(2*(a*a))-(c*c))));
+Mc:=(1/2*(sqrt((2*(a*a))+(2*(c*c))-(b*b))));
+La:=((2/(b+c))*(sqrt(b*c*p*(p-a))));
+Lb:=((2/(c+a))*(sqrt(c*a*p*(p-b))));
+Lc:=((2/(b+a))*(sqrt(b*a*p*(p-c))));
+R:=((a*b*c)/(4*(sqrt(p*(p-a)*(p-b)*(p-c)))));
+r1:=(Sqrt(((p-a)*(p-b)*(p-c))/p));
+writeln('Ha=',Ha:2:2);
+writeln('Hb=',Hb:2:2);
+writeln('Hc=',Hc:2:2);
+writeln(t, 'Ha=',Ha:2:2);
+writeln(t, 'Hb=',Hb:2:2);
+writeln(t, 'Hc=',Hc:2:2);
+writeln('Ma=',Ma:2:2);
+writeln('Mb=',Mb:2:2);
+writeln('Mc=',Mc:2:2);
+writeln(t, 'Ma=',Ma:2:2);
+writeln(t, 'Mb=',Mb:2:2);
+writeln(t, 'Mc=',Mc:2:2);
+writeln('La=',La:2:2);
+writeln('Lb=',Lb:2:2);
+writeln('Lc=',Lc:2:2);
+writeln(t, 'La=',La:2:2);
+writeln(t, 'Lb=',Lb:2:2);
+writeln(t, 'Lc=',Lc:2:2);
+writeln('R=',R:2:2);
+writeln(t, 'R=',R:2:2);
+writeln('r1=',r1:2:2);
+writeln(t, 'r1=',r1:2:2);
+close(t);
+end.
